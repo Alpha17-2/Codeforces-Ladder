@@ -7,7 +7,7 @@ import java.lang.reflect.Array;
 import java.math.BigInteger;
 import java.util.*;
 
-public class FreeCash {
+public class Adding_Digits {
     static class FastReader {
         BufferedReader br;
         StringTokenizer st;
@@ -40,8 +40,6 @@ public class FreeCash {
             return Double.parseDouble(next());
         }
 
-
-        
         String nextLine() {
             String str = "";
             try {
@@ -55,30 +53,21 @@ public class FreeCash {
     public static void main(String[] args) {
         FastReader sc = new FastReader();
         try {
-            int t=1;
-            //t=sc.nextInt();
-            while(t-->0)
+            int a,b,n;
+            a=sc.nextInt();
+            b=sc.nextInt();
+            n=sc.nextInt();
+            for(int i=0;i<=9;i++)
             {
-               int n=sc.nextInt();
-               int ans=Integer.MIN_VALUE;
-               int c=1;
-               String current=sc.nextLine();
-               String s;
-               for(int i=1;i<n;i++)
-               {
-                   s=sc.nextLine();
-                   if(current.compareTo(s)==0)
-                   {
-                       ++c;
-                       ans=Math.max(c,ans);
-                   }
-                   else
-                       c=1;
-                   current=s;
-               }
-               ans=Math.max(ans,c);
-                System.out.println(ans);
+                if( (a*10+i) % b ==0 )
+                {
+                    System.out.print(a*10+i);
+                    for (int j=1;j<n;j++)
+                        System.out.print(0);
+                    System.exit(0);
+                }
             }
+            System.out.println(-1);
         } catch (Exception e) {
             System.out.println("Run Away error or Alpha will hunt you down !!");
         }
